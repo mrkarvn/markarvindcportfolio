@@ -370,6 +370,76 @@ body{
   z-index: 1;
   animation: pulseShape 5s infinite alternate ease-in-out;
 }
+/* --------------- Footer (modern professional redesign) --------------- */
+.site-footer {
+  background: linear-gradient(180deg, var(--card) 0%, var(--bg) 100%);
+  border-top: 1px solid var(--border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  padding: 40px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-left p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 22px;
+}
+
+.footer-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition);
+  position: relative;
+}
+
+.footer-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.footer-nav a:hover::after,
+.footer-nav a:focus::after {
+  width: 100%;
+}
+
+.footer-nav a:hover {
+  color: var(--accent);
+}
+
+/* Responsive tweak */
+@media (max-width: 640px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-nav {
+    gap: 16px;
+  }
+}
 
 @keyframes pulseShape {
   from { transform: scale(1); opacity: 0.8; }
@@ -393,7 +463,6 @@ body{
   .about-grid{ grid-template-columns:1fr 300px; }
   .projects-grid{ grid-template-columns: repeat(2, 1fr); }
   .skills-grid{ grid-template-columns: repeat(2, 1fr); }
-  .site-footer{ justify-content:space-between; }
 }
 
 /*-------------- Desktop --------------*/
