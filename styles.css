@@ -195,12 +195,48 @@ body{
 .link-more:hover{ color:var(--accent-600); text-decoration:underline; }
 
 /* --------------- Skills (progress bars) --------------- */
-.skills-grid{ display:grid; gap:12px; }
-.skill{ background:var(--card); padding:12px; border-radius:8px; border:1px solid var(--border); box-shadow:var(--shadow); }
-.skill-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; color:var(--muted); }
-.progress{ background: linear-gradient(90deg, rgba(0,0,0,0.03), rgba(0,0,0,0.03)); height:10px; border-radius:999px; overflow:hidden; border:1px solid var(--border); }
-.progress-bar{ display:block; height:100%; background:linear-gradient(90deg,var(--accent),var(--accent-600)); transition:width 600ms ease; }
+.skills-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: stretch;
+}
 
+.skill {
+  background: var(--card);
+  padding: 16px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skill-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  color: var(--text);
+  font-weight: 600;
+  font-family: var(--font-sans);
+}
+
+.progress {
+  background: var(--bg);
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.progress-bar {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-600));
+  transition: width 600ms ease;
+}
 /* ---------- CONTACT SECTION ---------- */
 .contact-section {
   position: relative;
